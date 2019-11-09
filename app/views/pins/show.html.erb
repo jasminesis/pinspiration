@@ -1,2 +1,8 @@
-<h1>Pins#show</h1>
-<p>Find me in app/views/pins/show.html.erb</p>
+<div class="section">
+	<div class="container">
+		<h1 class="title"><%= @pin.title %></h1>
+		<div class="content">
+			<img src="<%= @pin.image_url %>" />
+		</div>
+	</div>
+</div>

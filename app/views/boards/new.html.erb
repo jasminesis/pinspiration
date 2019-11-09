@@ -1,2 +1,17 @@
-<h1>Boards#new</h1>
-<p>Find me in app/views/boards/new.html.erb</p>
+<h1 class="title">New Board</h1>
+
+<div class="section">
+	<%= simple_form_for @board do |f| %>
+	<div class="field">
+		<div class="control">
+			<%= f.input :name, input_html: {class: 'input'}, wrapper: false, label_html: {class: 'label'} %>
+		</div>
+	</div>
+	<div class="field">
+		<div class="control">
+			<%= f.input :description, input_html: {class: 'input'}, wrapper: false, label_html: {class: 'label'} %>
+		</div>
+	</div>
+	<%= f.button :submit, 'Create new board', class: "button is-primary" %>
+	<% end %>
+</div>
