@@ -21,18 +21,25 @@ class PinsController < ApplicationController
   end
 
   def edit
-
+		@pin = Pin.find(params[:id])
+    @boards = Board.all
   end
 
   def show
+    @boards = Board.all
     @pin = Pin.find(params[:id])
-  
+  end
+  def destroy
+    @pin = Pin.find(params[:id])
+		@pin.destroy
+
+    redirect_to pins_path
   end
   
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :image_url, :board_id)
+    params.require(:pin).permit(:title, :image_url, :board_id, :comment_id)
   end
 
 
